@@ -8,8 +8,8 @@
 #}
 
 data "tfe_workspace" "test" {
-  name         = "1-concurrency-test"
-  organization = "georgi-berchev"
+  name         = "cli" #cli, 1-concurrency-test
+  organization = "new-free" #new-free,georgi-berchev
 }
 
 output "name" {
