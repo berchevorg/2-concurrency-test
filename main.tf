@@ -24,3 +24,4 @@ data "tfe_workspace" "test" {
 output "name" {
   value = data.tfe_workspace.test.id
 }
+
