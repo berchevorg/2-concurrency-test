@@ -16,6 +16,11 @@ resource "null_resource" "env" {
   }
 }
 
+resource "tfe_workspace" "test2" {
+  name         = "my-workspace-name"
+  organization = "georgi-berchev" 
+}
+
 data "tfe_workspace" "test" {
   name         = "1-concurrency-test" #cli, 1-concurrency-test
   organization = "georgi-berchev" #new-free,georgi-berchev
