@@ -7,9 +7,18 @@
 #  }
 #}
 
+resource "null_resource" "env" {
+  provisioner "local-exec" {
+    command = "env"
+  }
+  triggers = {
+    run_every_time = uuid()
+  }
+}
+
 data "tfe_workspace" "test" {
-  name         = "cli" #cli, 1-concurrency-test
-  organization = "new-free" #new-free,georgi-berchev
+  name         = "1-concurrency-test" #cli, 1-concurrency-test
+  organization = "georgi-berchev" #new-free,georgi-berchev
 }
 
 output "name" {
